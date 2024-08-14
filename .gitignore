@@ -1,0 +1,15 @@
+#Ignore database files
+*.db
+*.sqlite3
+
+#Ignore environment variables and settings files
+.env
+.envrc
+settings.py
+
+#Ignore compiled Python files
+*.pyc
+__pycache__/
+
+#Ignore VS Code settings
+.vscode/
