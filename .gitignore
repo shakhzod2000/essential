@@ -5,7 +5,7 @@
 #Ignore environment variables and settings files
 .env
 .envrc
-settings.py
+/essential_words/settings.py
 
 #Ignore compiled Python files
 *.pyc
