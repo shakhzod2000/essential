@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Essential Deutsch</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <main class="main">
+        <header class="header">
+            <a href="#" class="logo">Quiz</a>
+
+            <nav class="navbar">
+                <a href="#">Home</a>
+                <a href="#">Über</a>
+                <a href="#">Dienste</a>
+                <a href="mailto:sshermatov50@gmail.com">Kontakt</a>
+            </nav>
+        </header>
+
+        <div class="container">
+            <section class="quiz-section">
+                <div class="quiz-box">
+                    <h1>Deutsches Quiz</h1>
+                    <div class="quiz-header">
+                        <span class="question-total">1 von 5 Fragen</span>
+                        <span class="header-score">Spielstand: 0 / 5</span>
+                    </div>
+                    
+                    <h2 id="question" class="question-text"></h2>
+                    
+                    <div class="option-list"></div>
+                    
+                    <div class="quiz-footer">
+                        <button class="backToUnit-btn">Zurück</button>
+                        <button class="next-btn">Weiter</button>
+                    </div>
+                </div> 
+
+                <div class="result-box">
+                    <h2>Quiz Ergebnis!</h2>
+                    <div class="percentage-container">
+                        <div class="circular-progress">
+                            <span class="progress-value">0%</span>
+                        </div>
+
+                        <span class="score-text">Dein Ergebnis 0 von 5</span>
+                    </div>
+
+                    <div class="buttons">
+                        <button class="goHome-btn">Startseite</button>
+                        <button class="tryAgain-btn">Erneut versuchen</button>
+                    </div>
+                </div>
+            </section>
+            
+
+            <section class="home">
+                <div class="home-content">
+                    <h1>Essential Deutsch</h1>
+                    <p>Lerne Deutsch mit Spaß</p>
+                    <button class="start-btn">Beginn Quiz</button>
+                </div>
+            </section>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 Shakhzod Shermatov. Alle Rechte vorbehalten.</p>
+        </footer>    
+    </main>
+
+    <div class="popup-info">
+        <h2>Welche Sprache möchtest du lernen?</h2>
+        <div class="languages-btn">
+            <button class="info-btn german-btn"></button>
+            <button class="info-btn english-btn"></button>
+        </div>
+        <div class="btn-group">
+            <button class="exit-btn">Abbrechen</button>
+        </div>
+    </div>
+
+    <div class="essentials-popup">
+        <h2>Welches Buch möchtest du üben?</h2>
+        <div class="essentials-btn">
+            <button class="essential E1">Essential 1</button>
+            <button class="essential E2">Essential 2</button>
+            <button class="essential E3">Essential 3</button>
+        </div>
+        <div class="essentials-btn">
+            <button class="essential E4">Essential 4</button>
+            <button class="essential E5">Essential 5</button>
+            <button class="essential E6">Essential 6</button>
+        </div>
+        <div class="btn-group">
+            <button class="backToLang-btn">Zurück</button>
+        </div>
+    </div>
+
+    <div class="error-popup">
+        <h2>Noch nicht verfügbar</h2>
+        <button class="OK-btn">OK</button>
+    </div>
+
+    <div class="unit-popup">
+        <h2>Wähle eine Lektion</h2>
+        <div class="unit-container">
+            <div class="unit-list">
+                <button class="unit">1</button>
+                <button class="unit">2</button>
+                <button class="unit">3</button>
+                <button class="unit">4</button>
+                <button class="unit">5</button>
+                <button class="unit">6</button>
+                <button class="unit">7</button>
+                <button class="unit">8</button>
+                <button class="unit">9</button>
+                <button class="unit">10</button>
+            </div>
+            <div class="unit-list">
+                <button class="unit">11</button>
+                <button class="unit">12</button>
+                <button class="unit">13</button>
+                <button class="unit">14</button>
+                <button class="unit">15</button>
+                <button class="unit">16</button>
+                <button class="unit">17</button>
+                <button class="unit">18</button>
+                <button class="unit">19</button>
+                <button class="unit">20</button>
+            </div>
+            <div class="unit-list">
+                <button class="unit">21</button>
+                <button class="unit">22</button>
+                <button class="unit">23</button>
+                <button class="unit">24</button>
+                <button class="unit">25</button>
+                <button class="unit">26</button>
+                <button class="unit">27</button>
+                <button class="unit">28</button>
+                <button class="unit">29</button>
+                <button class="unit">30</button>
+            </div>
+        </div>
+        <div class="btn-group2">
+            <button class="backToEss-btn">Zurück</button>
+        </div>
+    </div>
+
+    <div class="unit-popup-en">
+        <h2>Choose the unit</h2>
+        <div class="unit-container-en">
+            <div class="unit-list-en">
+                <button class="unit">1</button>
+                <button class="unit">2</button>
+                <button class="unit">3</button>
+                <button class="unit">4</button>
+                <button class="unit">5</button>
+                <button class="unit">6</button>
+                <button class="unit">7</button>
+                <button class="unit">8</button>
+                <button class="unit">9</button>
+                <button class="unit">10</button>
+            </div>
+            <div class="unit-list-en">
+                <button class="unit">11</button>
+                <button class="unit">12</button>
+                <button class="unit">13</button>
+                <button class="unit">14</button>
+                <button class="unit">15</button>
+                <button class="unit">16</button>
+                <button class="unit">17</button>
+                <button class="unit">18</button>
+                <button class="unit">19</button>
+                <button class="unit">20</button>
+            </div>
+            <div class="unit-list-en">
+                <button class="unit">21</button>
+                <button class="unit">22</button>
+                <button class="unit">23</button>
+                <button class="unit">24</button>
+                <button class="unit">25</button>
+                <button class="unit">26</button>
+                <button class="unit">27</button>
+                <button class="unit">28</button>
+                <button class="unit">29</button>
+                <button class="unit">30</button>
+            </div>
+        </div>
+        <div class="btn-group3">
+            <button class="backToEssEn-btn">Back</button>
+        </div>
+    </div>
+    <form id="insert-questions-form" method="POST">
+        {% csrf_token %}
+        <button type="button" onclick="insertQuestions()">Insert Questions</button>
+    </form>
+    <!-- <script type="module" src="/static/JS/allQuestions_1.js"></script> -->
+    <!-- <script type="module" src="/static/JS/insert_questions.js"></script> -->
+    <!-- <script type="module" src="/static/JS/questions1.js"></script> 
+    <script type="module" src="/static/JS/questions2.js"></script>
+    <script type="module" src="/static/JS/questions3.js"></script>
+    <script type="module" src="/static/JS/questions4.js"></script>
+    <script type="module" src="/static/JS/questions5.js"></script>
+    <script type="module" src="/static/JS/questions6.js"></script>
+    <script type="module" src="/static/JS/questions7.js"></script>
+    <script type="module" src="/static/JS/questions8.js"></script>
+    <script type="module" src="/static/JS/questions9.js"></script>
+    <script type="module" src="/static/JS/questions10.js"></script>
+    <script type="module" src="/static/JS/questions11.js"></script>
+    <script type="module" src="/static/JS/questions12.js"></script>
+    <script type="module" src="/static/JS/questions13.js"></script>
+    <script type="module" src="/static/JS/questions14.js"></script>
+    <script type="module" src="/static/JS/questions15.js"></script>
+    <script type="module" src="/static/JS/questions16.js"></script>
+    <script type="module" src="/static/JS/questions17.js"></script>
+    <script type="module" src="/static/JS/questions18.js"></script>
+    <script type="module" src="/static/JS/questions19.js"></script>
+    <script type="module" src="/static/JS/questions20.js"></script>
+    <script type="module" src="/static/JS/questions21.js"></script>
+    <script type="module" src="/static/JS/questions22.js"></script>
+    <script type="module" src="/static/JS/questions23.js"></script>
+    <script type="module" src="/static/JS/questions24.js"></script>
+    <script type="module" src="/static/JS/questions25.js"></script>
+    <script type="module" src="/static/JS/questions26.js"></script>
+    <script type="module" src="/static/JS/questions27.js"></script>
+    <script type="module" src="/static/JS/questions28.js"></script>
+    <script type="module" src="/static/JS/questions29.js"></script>
+    <script type="module" src="/static/JS/questions30.js"></script>
+    <script type="module" src="/static/JS/savollar1.js"></script>
+    <script type="module" src="/static/JS/savollar2.js"></script>
+    <script type="module" src="/static/JS/savollar3.js"></script>
+    <script type="module" src="/static/JS/savollar4.js"></script>
+    <script type="module" src="/static/JS/savollar5.js"></script>
+    <script type="module" src="/static/JS/savollar6.js"></script>
+    <script type="module" src="/static/JS/savollar7.js"></script>
+    <script type="module" src="/static/JS/savollar8.js"></script>
+    <script type="module" src="/static/JS/savollar9.js"></script>
+    <script type="module" src="/static/JS/savollar10.js"></script>
+    <script type="module" src="/static/JS/savollar11.js"></script>
+    <script type="module" src="/static/JS/savollar12.js"></script>
+    <script type="module" src="/static/JS/savollar13.js"></script>
+    <script type="module" src="/static/JS/savollar14.js"></script>
+    <script type="module" src="/static/JS/savollar15.js"></script>
+    <script type="module" src="/static/JS/savollar16.js"></script>
+    <script type="module" src="/static/JS/savollar17.js"></script>
+    <script type="module" src="/static/JS/savollar18.js"></script>
+    <script type="module" src="/static/JS/savollar19.js"></script>
+    <script type="module" src="/static/JS/savollar20.js"></script>
+    <script type="module" src="/static/JS/savollar21.js"></script>
+    <script type="module" src="/static/JS/savollar22.js"></script>
+    <script type="module" src="/static/JS/savollar23.js"></script>
+    <script type="module" src="/static/JS/savollar24.js"></script>
+    <script type="module" src="/static/JS/savollar25.js"></script>
+    <script type="module" src="/static/JS/savollar26.js"></script>
+    <script type="module" src="/static/JS/savollar27.js"></script>
+    <script type="module" src="/static/JS/savollar28.js"></script>
+    <script type="module" src="/static/JS/savollar29.js"></script>
+    <script type="module" src="/static/JS/savollar30.js"></script> -->
+    <script src="/static/JS/script.js"></script>
+</body>
+</html>
