@@ -5,6 +5,5 @@ do
   echo "Waiting for MySQL connection..."
   sleep 5
 done
-
 echo "MySQL is up and running!"
 exec "$@"
