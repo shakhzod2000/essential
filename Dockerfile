@@ -10,6 +10,10 @@ RUN apt-get update && apt-get install -y \
   libmariadb-dev \
   libcairo2-dev \
   pkg-config \
+  libdbus-1-dev \
+  libgirepository1.0-dev \
+  libcairo2-dev \
+  gir1.2-glib-2.0 \
   && rm -rf /var/lib/apt/lists/*
 
 # Copy the current directory contents into the container at /app
