@@ -19,3 +19,9 @@ services:
       - "8000:8000"
     depends_on:
       - db
+    environment:
+      DATABASE_NAME: essential_words
+      DATABASE_USER: root
+      DATABASE_PASSWORD: 1ecg&xDvx
+      DATABASE_HOST: db
+      DATABASE_PORT: 3306
