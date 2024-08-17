@@ -2,9 +2,17 @@
 *.db
 *.sqlite3
 
+#Disctribution / packaging
+lib/
+lib64/
+var/
+wheels/
+
 #Ignore environment variables and settings files
 .env
-.envrc
+.venv
+env/
+venv/
 
 #Ignore compiled Python files
 *.pyc
