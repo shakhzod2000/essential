@@ -1,13 +1,20 @@
 services:
   db: 
     image: mysql:8.0
+    restart: always
     environment:
       MYSQL_DATABASE: ${DATABASE_NAME}
       MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+    secrets:
+      - db_root_password
     ports:
       - "3306:3306"
     volumes:
       - db_data:/var/lib/mysql
+
+  secrets:
+    db_root_password:
+      file: ./secrets/db_root_password.txt
 
   web:
     build: .
@@ -24,6 +31,10 @@ services:
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       DATABASE_HOST: db
       DATABASE_PORT: ${DATABASE_PORT}
+    develop:
+      watch:
+        - action: rebuild
+          path: .
 
 volumes:
   db_data:
