@@ -10,33 +10,6 @@ from .models import Quiz, Question, Option
 def home(request):
     return render(request, 'quiz.html')
 
-@csrf_exempt
-def insert_questions(request):
-    if request.method == 'POST':
-        try:
-            quiz = Quiz.objects.create(title='Essential Quiz', book='E1')
-            all_questions = json.loads(request.body).get('all_questions')
-
-            for question_data in all_questions:
-                question = Question.objects.create(
-                    quiz=quiz,
-                    numb=question_data['numb'],
-                    question=question_data['question'],
-                    answer=question_data['answer'],
-                    unit=question_data['unit'],
-                    language=question_data['language']
-                )
-
-                for option_text in question_data['options']:
-                    Option.objects.create(
-                        question=question,
-                        option_text=option_text
-                    )
-            return JsonResponse({'message': 'Questions inserted successfully'}, status=200)
-        except Exception as e:
-            return JsonResponse({'error': str(e)}, status=500)
-    return JsonResponse({'error': 'Invalid request method'}, status=405)
-
 def get_questions(request):
     unit = request.GET.get('unit')
     language = request.GET.get('language')
@@ -64,3 +37,31 @@ def get_questions(request):
     else:
         # Return error response if unit or language parameter is missing
         return JsonResponse({'error': 'Missing book, unit or language parameter'}, status=400)
+
+
+# @csrf_exempt
+# def insert_questions(request):
+#     if request.method == 'POST':
+#         try:
+#             quiz = Quiz.objects.create(title='Essential Quiz', book='E1')
+#             all_questions = json.loads(request.body).get('all_questions')
+
+#             for question_data in all_questions:
+#                 question = Question.objects.create(
+#                     quiz=quiz,
+#                     numb=question_data['numb'],
+#                     question=question_data['question'],
+#                     answer=question_data['answer'],
+#                     unit=question_data['unit'],
+#                     language=question_data['language']
+#                 )
+
+#                 for option_text in question_data['options']:
+#                     Option.objects.create(
+#                         question=question,
+#                         option_text=option_text
+#                     )
+#             return JsonResponse({'message': 'Questions inserted successfully'}, status=200)
+#         except Exception as e:
+#             return JsonResponse({'error': str(e)}, status=500)
+#     return JsonResponse({'error': 'Invalid request method'}, status=405)
