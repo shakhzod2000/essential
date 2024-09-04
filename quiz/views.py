@@ -43,12 +43,8 @@ def get_questions(request):
     book = request.GET.get('book')
 
     if unit and language and book:
-        # Fetch questions from database filtered by unit and language and book
+        # Fetch questions from database filtered by unit, language and book
         questions = Question.objects.filter(quiz__book=book, unit=unit, language=language)
-        # print(questions.query)
-        # for query in connection.queries:
-        #     print(query['sql'])
-
         questions_list = []
         # Loop through questions and get options for each question
         for question in questions:

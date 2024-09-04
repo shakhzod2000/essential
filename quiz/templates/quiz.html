@@ -6,8 +6,8 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Essential Deutsch</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="/static/css/style.css?v=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 
 <body>
@@ -62,9 +62,9 @@
 
             <section class="home">
                 <div class="home-content">
-                    <h1>Essential Deutsch</h1>
-                    <p>Lerne Deutsch mit Spaß</p>
-                    <button class="start-btn">Beginn Quiz</button>
+                    <h1>Essential Words</h1>
+                    <p></p>
+                    <button class="start-btn">Get Started</button>
                 </div>
             </section>
         </div>
@@ -196,72 +196,6 @@
             <button class="backToEssEn-btn">Back</button>
         </div>
     </div>
-    <form id="insert-questions-form" method="POST">
-        {% csrf_token %}
-        <button type="button" onclick="insertQuestions()">Insert Questions</button>
-    </form>
-    <!-- <script type="module" src="/static/JS/allQuestions_1.js"></script> -->
-    <!-- <script type="module" src="/static/JS/insert_questions.js"></script> -->
-    <!-- <script type="module" src="/static/JS/questions1.js"></script> 
-    <script type="module" src="/static/JS/questions2.js"></script>
-    <script type="module" src="/static/JS/questions3.js"></script>
-    <script type="module" src="/static/JS/questions4.js"></script>
-    <script type="module" src="/static/JS/questions5.js"></script>
-    <script type="module" src="/static/JS/questions6.js"></script>
-    <script type="module" src="/static/JS/questions7.js"></script>
-    <script type="module" src="/static/JS/questions8.js"></script>
-    <script type="module" src="/static/JS/questions9.js"></script>
-    <script type="module" src="/static/JS/questions10.js"></script>
-    <script type="module" src="/static/JS/questions11.js"></script>
-    <script type="module" src="/static/JS/questions12.js"></script>
-    <script type="module" src="/static/JS/questions13.js"></script>
-    <script type="module" src="/static/JS/questions14.js"></script>
-    <script type="module" src="/static/JS/questions15.js"></script>
-    <script type="module" src="/static/JS/questions16.js"></script>
-    <script type="module" src="/static/JS/questions17.js"></script>
-    <script type="module" src="/static/JS/questions18.js"></script>
-    <script type="module" src="/static/JS/questions19.js"></script>
-    <script type="module" src="/static/JS/questions20.js"></script>
-    <script type="module" src="/static/JS/questions21.js"></script>
-    <script type="module" src="/static/JS/questions22.js"></script>
-    <script type="module" src="/static/JS/questions23.js"></script>
-    <script type="module" src="/static/JS/questions24.js"></script>
-    <script type="module" src="/static/JS/questions25.js"></script>
-    <script type="module" src="/static/JS/questions26.js"></script>
-    <script type="module" src="/static/JS/questions27.js"></script>
-    <script type="module" src="/static/JS/questions28.js"></script>
-    <script type="module" src="/static/JS/questions29.js"></script>
-    <script type="module" src="/static/JS/questions30.js"></script>
-    <script type="module" src="/static/JS/savollar1.js"></script>
-    <script type="module" src="/static/JS/savollar2.js"></script>
-    <script type="module" src="/static/JS/savollar3.js"></script>
-    <script type="module" src="/static/JS/savollar4.js"></script>
-    <script type="module" src="/static/JS/savollar5.js"></script>
-    <script type="module" src="/static/JS/savollar6.js"></script>
-    <script type="module" src="/static/JS/savollar7.js"></script>
-    <script type="module" src="/static/JS/savollar8.js"></script>
-    <script type="module" src="/static/JS/savollar9.js"></script>
-    <script type="module" src="/static/JS/savollar10.js"></script>
-    <script type="module" src="/static/JS/savollar11.js"></script>
-    <script type="module" src="/static/JS/savollar12.js"></script>
-    <script type="module" src="/static/JS/savollar13.js"></script>
-    <script type="module" src="/static/JS/savollar14.js"></script>
-    <script type="module" src="/static/JS/savollar15.js"></script>
-    <script type="module" src="/static/JS/savollar16.js"></script>
-    <script type="module" src="/static/JS/savollar17.js"></script>
-    <script type="module" src="/static/JS/savollar18.js"></script>
-    <script type="module" src="/static/JS/savollar19.js"></script>
-    <script type="module" src="/static/JS/savollar20.js"></script>
-    <script type="module" src="/static/JS/savollar21.js"></script>
-    <script type="module" src="/static/JS/savollar22.js"></script>
-    <script type="module" src="/static/JS/savollar23.js"></script>
-    <script type="module" src="/static/JS/savollar24.js"></script>
-    <script type="module" src="/static/JS/savollar25.js"></script>
-    <script type="module" src="/static/JS/savollar26.js"></script>
-    <script type="module" src="/static/JS/savollar27.js"></script>
-    <script type="module" src="/static/JS/savollar28.js"></script>
-    <script type="module" src="/static/JS/savollar29.js"></script>
-    <script type="module" src="/static/JS/savollar30.js"></script> -->
     <script src="/static/JS/script.js"></script>
 </body>
 </html>

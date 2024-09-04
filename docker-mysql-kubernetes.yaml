@@ -66,4 +66,4 @@ metadata:
   namespace: default
 type: Opaque
 data:
-  MYSQL_PASSWORD: MWVjZyZ4RHZ4= # Base64 encoded password (e.g., 'mysql_password')
+  MYSQL_PASSWORD: MWVjZyZ4RHZ4MDEyNA== # Base64 encoded password (e.g., 'mysql_password')

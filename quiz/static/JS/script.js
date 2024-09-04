@@ -1,4 +1,5 @@
 //script.js
+const dynamicText = document.querySelector('.home-content p');
 const startBtn = document.querySelector('.start-btn');
 const popupInfo = document.querySelector('.popup-info');
 const exitBtn = document.querySelector('.exit-btn');
@@ -38,6 +39,26 @@ let activeUnit;
 let unit;
 let language;
 let book;
+
+
+var options = {
+        strings: [
+            "Learn the words with fun!", 
+            "Lerne die Wörter mit Spaß!", 
+            "So'zlarni maroq bilan o'rganing!"],
+        typeSpeed: 50,
+        backSpeed: 50,
+        backDelay: 1500,
+        startDelay: 0,
+        loop: true,
+        showCursor: false,
+        smartBackspace: false,
+        cursorChar: '|',
+        autoInsertCss: true,
+        loopCount: Infinity,
+};
+
+var typed = new Typed(".home-content p", options);
 
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -121,7 +142,6 @@ DeBtnUnit.forEach(button => {
                 const response = await axios.get(`api/questions?unit=${unit}&language=${language}&book=${book}`);
                 questions = response.data; // access questions array from the response data
                 console.log(questions);
-                console.log(questions.length);
                 startQuiz(questions);
             } catch (error) {
                 console.error('Error fetching questions:', error);
@@ -149,6 +169,7 @@ EnBtnUnit.forEach(button => {
             try {
                 const response = await axios.get(`api/questions?unit=${unit}&language=${language}&book=${book}`);
                 questions = response.data;
+                console.log(questions);
                 startQuiz(questions);
             } catch (error) {
                 console.error('Error fetching questions:', error);
@@ -318,3 +339,34 @@ function showResultBox() {
 document.addEventListener('dblclick',function(e){
     e.preventDefault();
 });
+
+
+// 1. Use URL parameters
+// Modify your JavaScript to update the URL when changing pages
+function updateURL(page) {
+    history.pushState(null, '', `?page=${page}`);
+  }
+  
+  // Check URL parameters on page load
+  window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const page = urlParams.get('page');
+    if (page) {
+      // Load the appropriate page based on the URL parameter
+      loadPage(page);
+    }
+  });
+
+  // 2. Use localStorage
+// Save the current page state
+// function savePage(page) {
+//     localStorage.setItem('currentPage', page);
+//   }
+  
+//   // Load the saved page on refresh
+//   window.addEventListener('load', () => {
+//     const savedPage = localStorage.getItem('currentPage');
+//     if (savedPage) {
+//       loadPage(savedPage);
+//     }
+//   });

@@ -1,6 +1,6 @@
 # quiz/urls.py
 from django.urls import path
-from .views import insert_questions, home, get_questions
+from .views import home, insert_questions, get_questions
 
 urlpatterns = [
     path('', home, name='home'),
