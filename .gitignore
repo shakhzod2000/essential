@@ -13,6 +13,7 @@ wheels/
 .venv
 env/
 venv/
+staticfiles/
 
 #Ignore compiled Python files
 *.pyc
