@@ -109,7 +109,8 @@ exitBtn.onclick = () => {
 function onEssentialClick(event) {
         book = event.target.classList[1];
         if (!event.target.classList.contains('E1') && 
-            !event.target.classList.contains('E2')) {
+            !event.target.classList.contains('E2') &&
+            !event.target.classList.contains('E3')) {
             errorPopup.classList.add('active');
             OKBtn.onclick = () => {
                 errorPopup.classList.remove('active');
