@@ -1,4 +1,4 @@
-// allQuestions_1.js is a file that contains all questions and answers of the first 30 questions of the test.
+// allQuestions_2.js is a file that contains all questions and answers of the first 30 questions of the test.
 import questions1 from './questions1.js';
 import questions2 from './questions2.js';
 import questions3 from './questions3.js';
@@ -62,7 +62,7 @@ import savollar29 from './savollar29.js';
 import savollar30 from './savollar30.js';
 
 
-const allQuestions_1 = {
+const allQuestions_2 = {
     questions1, questions2, questions3, questions4, questions5, questions6, 
     questions7, questions8, questions9, questions10, questions11, questions12, 
     questions13, questions14, questions15, questions16, questions17, questions18,
@@ -76,4 +76,4 @@ const allQuestions_1 = {
     savollar25, savollar26, savollar27, savollar28, savollar29, savollar30
 };
 
-export default allQuestions_1;
+export default allQuestions_2;
