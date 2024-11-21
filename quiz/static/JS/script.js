@@ -341,33 +341,3 @@ document.addEventListener('dblclick',function(e){
     e.preventDefault();
 });
 
-
-// 1. Use URL parameters
-// Modify your JavaScript to update the URL when changing pages
-function updateURL(page) {
-    history.pushState(null, '', `?page=${page}`);
-  }
-  
-  // Check URL parameters on page load
-  window.addEventListener('load', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const page = urlParams.get('page');
-    if (page) {
-      // Load the appropriate page based on the URL parameter
-      loadPage(page);
-    }
-  });
-
-  // 2. Use localStorage
-// Save the current page state
-// function savePage(page) {
-//     localStorage.setItem('currentPage', page);
-//   }
-  
-//   // Load the saved page on refresh
-//   window.addEventListener('load', () => {
-//     const savedPage = localStorage.getItem('currentPage');
-//     if (savedPage) {
-//       loadPage(savedPage);
-//     }
-//   });
