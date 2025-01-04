@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -13,7 +13,7 @@
 <body>
     <main class="main">
         <header class="header">
-            <a href="#" class="logo">Quiz</a>
+            <a class="logo">Quiz</a>
 
             <nav class="navbar">
                 <a href="#">Home</a>
@@ -28,8 +28,8 @@
                 <div class="quiz-box">
                     <h1>Essential Quiz</h1>
                     <div class="quiz-header">
-                        <span class="question-total">1 von 5 Fragen</span>
-                        <span class="header-score">Spielstand: 0 / 5</span>
+                        <span class="question-total">1 of 5 questions</span>
+                        <span class="header-score">Score: 0 / 5</span>
                     </div>
                     
                     <h2 id="question" class="question-text"></h2>
@@ -37,24 +37,24 @@
                     <div class="option-list"></div>
                     
                     <div class="quiz-footer">
-                        <button class="backToUnit-btn">Zurück</button>
-                        <button class="next-btn">Weiter</button>
+                        <button class="backToUnit-btn">Back</button>
+                        <button class="next-btn">Next</button>
                     </div>
                 </div> 
 
                 <div class="result-box">
-                    <h2>Quiz Ergebnis!</h2>
+                    <h2>Quiz Result!</h2>
                     <div class="percentage-container">
                         <div class="circular-progress">
                             <span class="progress-value">0%</span>
                         </div>
 
-                        <span class="score-text">Dein Ergebnis 0 von 5</span>
+                        <span class="score-text">You got 0 out of 5 questions correct</span>
                     </div>
 
                     <div class="buttons">
-                        <button class="goHome-btn">Startseite</button>
-                        <button class="tryAgain-btn">Erneut versuchen</button>
+                        <button class="goHome-btn">Go Home</button>
+                        <button class="tryAgain-btn">Try Again</button>
                     </div>
                 </div>
             </section>
@@ -200,3 +200,9 @@
     <script src="/static/JS/script.js?v=1.0"></script>
 </body>
 </html>
+
+<!-- <?php
+    function e($value) {
+        return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+    }
+?> -->

@@ -142,7 +142,6 @@ DeBtnUnit.forEach(button => {
             try {
                 const response = await axios.get(`api/questions?unit=${unit}&language=${language}&book=${book}`);
                 questions = response.data; // access questions array from the response data
-                console.log(questions);
                 startQuiz(questions);
             } catch (error) {
                 console.error('Error fetching questions:', error);
@@ -170,7 +169,6 @@ EnBtnUnit.forEach(button => {
             try {
                 const response = await axios.get(`api/questions?unit=${unit}&language=${language}&book=${book}`);
                 questions = response.data;
-                console.log(questions);
                 startQuiz(questions);
             } catch (error) {
                 console.error('Error fetching questions:', error);
@@ -218,7 +216,6 @@ backToUnit.onclick = () => {
 }
 
 nextBtn.onclick = () => {
-    console.log(`questionCount:${questionCount}, questions.length:${questions.length}, questionNumb:${questionNumb}`)
     if (questionCount < questions.length - 1) { // -1, weil Array bei 0 anfängt;  
         questionCount++;
         showQuestions(questionCount, questions);
@@ -323,8 +320,8 @@ function showResultBox() {
     const circularProgress = document.querySelector('.circular-progress');
     const progressValue = document.querySelector('.progress-value');
     
-    let progressStartValue = -1;
-    let progressEndValue = (userScore / questions.length) * 100;
+    let progressStartValue = 0;
+    let progressEndValue = Math.round((userScore / questions.length) * 100);
     let speed = 20;
     
     let progress = setInterval(() => {
