@@ -63,14 +63,14 @@ body {
 .container {
     display: flex; 
     height: 100vh;
-    width: 200%;
+    width: 100%;
 }
 
 .main::before {
     content: "";
-    /* min-height: 100vh; */
-    /* width: 100%; */
-    background-image: url('Bilder/Coliseum.jpg'); 
+    /* min-height: 100vh;
+    width: 100%; */
+    background-image: url('Bilder/Coliseum.jpg');
     background-size: cover;
     background-position: center;
     pointer-events: auto;
@@ -85,7 +85,7 @@ body {
 
 .home {
     position: relative;
-    left: -50%;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -791,7 +791,227 @@ body {
 }
 
 /* Media Query für kleinere Bildschirme, z.B. Smartphones */
-@media (max-width: 750px) {
+@media (min-width: 481px) and (max-width: 768px) {
+    .navbar a {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+
+    .header {
+        padding: 12px; 
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .main::before {
+        background-size: cover;
+        background-position: center;
+        pointer-events: auto;
+        position: absolute;
+    }
+    
+    .home-content {
+        width: calc(100vw * 0.7);
+        height: calc(56.25vw * 0.4);
+        margin-left: 30px;
+        transform: translateY(-150px) translateX(-30px);
+    }
+
+    .home-content h1 {
+        font-size: 26px;
+    }
+
+    .home-content p {
+        font-size: 18px;
+    }
+
+    .home-content .start-btn {
+        width: calc(100vw * 0.3);
+        /* width: calc(100vw * 0.2); */
+        font-size: 16px;
+        font-weight: 700;
+        padding: 10px;
+    }
+
+    .popup-info.active {
+        width: calc(100vw * 0.7);
+        height: auto;
+    }
+
+    .popup-info h2 {
+        font-size: 14px;
+    }
+    
+    .popup-info .languages-btn .info-btn {
+        width: calc(80% * 0.4);
+        padding: 25px 25px;
+    }
+    
+    .popup-info .btn-group .exit-btn {
+        width: 80px; 
+        height: 35px;
+        font-size: 12px;
+    }
+    .essentials-popup {
+        width: calc(100vw * 0.75);
+        padding: 9px;
+    }
+    
+    .essentials-popup h2 {
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    .essentials-popup .essentials-btn .essential {
+        font-size: 13px;
+    }
+    
+    .essentials-popup .btn-group .backToLang-btn {
+        margin: 10px 20px;
+    }
+    
+    .unit-popup {
+        width: calc(100vw * 0.75);
+        padding: 10px 5px;
+    }
+    
+    .unit-popup.active {
+        opacity: 1;
+        pointer-events: auto;
+        transition: .1s ease;
+    }
+    
+    .unit-popup h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .unit-popup .unit-list {
+        padding: 10px 0px;
+    }
+    
+    .unit-popup .unit-list .unit {
+        padding: 12px 10px;
+        font-size: 10px;
+    }
+    
+    .btn-group2 {
+        border-top: 2px solid #fff;
+        margin-top: 20px;
+    }
+    
+    .btn-group2 .back-btn {
+        font-size: 14px;
+        /* margin-top: 20px; */
+    }
+    
+    .btn-group2 .back-btn:hover {
+        background:tomato;
+        color: #fafaf8;
+    }
+    
+    .unit-popup-en {
+        width: calc(100vw * 0.75);
+        padding: 10px 5px;
+    }
+    
+    .unit-popup-en.active {
+        opacity: 1;
+        pointer-events: auto;
+        transition: .1s ease;
+    }
+    
+    .unit-popup-en h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    
+    .unit-popup-en .unit-list-en {
+        padding: 10px 0px;
+    }
+    
+    .unit-popup-en .unit-list-en .unit {
+        padding: 12px 10px;
+        font-size: 10px;
+    }
+    
+    .btn-group3 {
+        border-top: 2px solid #fff;
+        margin-top: 20px;
+    }
+    
+    .btn-group3 .orqa-btn {
+        font-size: 14px;
+        /* margin-top: 20px; */
+    }
+    
+    .btn-group3 .orqa-btn:hover {
+        background:tomato;
+        color: #fafaf8;
+    }
+    
+    .quiz-section .quiz-box {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+    }
+
+    .quiz-box h1 {
+        font-size: 22px;
+    }
+
+    .quiz-box .question-text {
+        font-size: 24px;
+    }
+
+    .option-list .option {
+        font-size: 18px;
+    }
+
+    .quiz-header .question-total {
+        font-size: 16px;
+        font-weight: 600;
+        background:rgb(172, 12, 230);
+        color: white;
+        background-size: 35px;
+        border-radius: 6px;
+        padding: 7px;
+    }
+
+    .quiz-header .header-score {
+        font-size: 16px;
+    }
+
+    .quiz-footer .next-btn, .backToUnit-btn {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    .quiz-section .result-box {
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .result-box h2 {
+        font-size: 30px;
+    }
+
+    .circular-progress .progress-value {
+        font-size: 45px; 
+    }
+
+    .buttons button {
+        width: 150px; 
+        height: 55px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
     .navbar a {
         font-size: 16px;
         margin-left: 10px;
